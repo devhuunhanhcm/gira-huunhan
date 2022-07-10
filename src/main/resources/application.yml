@@ -3,6 +3,11 @@ spring:
     url: jdbc:postgresql://localhost:5432/pg-practice
     username: postgres
     password: 1234
+  jpa:
+    hibernate:
+      ddl-auto: create
+    generate-ddl: true
+    show-sql: true
     
   flyway:
     enabled: false 
