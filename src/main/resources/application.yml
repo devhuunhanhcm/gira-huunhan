@@ -5,11 +5,10 @@ spring:
     password: 1234
   jpa:
     hibernate:
-      ddl-auto: update
-    generate-ddl: true
+      ddl-auto: validate
+    generate-ddl: false
     show-sql: true
     
   flyway:
-    enabled: false 
+    enabled: true 
     driver-class-name: org.postgresql.Driver
-    baseline-on-migrate: true

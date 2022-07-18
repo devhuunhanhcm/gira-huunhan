@@ -28,8 +28,8 @@ public class GiraRoleController {
 	
 	@GetMapping
 	public Object findAll() {
-		List<GiraRole> roles = service.findAllEntity();
-		return new ResponseEntity<>(roles,HttpStatus.OK);
+		List<GiraRoleDTO> roles = service.findAllEntity();
+		return ResponseHelper.getResponse(roles, HttpStatus.OK);
 	}
 	
 	@PostMapping
