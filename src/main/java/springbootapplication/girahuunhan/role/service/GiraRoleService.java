@@ -6,6 +6,6 @@ import springbootapplication.girahuunhan.role.Dto.GiraRoleDTO;
 import springbootapplication.girahuunhan.role.model.GiraRole;
 
 public interface GiraRoleService {
-	List<GiraRole> findAllEntity();
+	List<GiraRoleDTO> findAllEntity();
 	GiraRole save(GiraRoleDTO dto);
 }

@@ -1,6 +1,7 @@
 package springbootapplication.girahuunhan.role.service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,8 +17,12 @@ public class GiraRoleServiceImp implements GiraRoleService{
 	private GiraRoleRepository repository;
 	
 	@Override
-	public List<GiraRole> findAllEntity() {
-		return repository.findAll();
+	public List<GiraRoleDTO> findAllEntity() {
+		List<GiraRole> roles =  repository.findAll();
+		
+		return roles.stream()
+					.map(t -> GiraRoleMapper.INSTANCE.mapToDTO(t))
+					.collect(Collectors.toList());
 	}
 
 	@Override
