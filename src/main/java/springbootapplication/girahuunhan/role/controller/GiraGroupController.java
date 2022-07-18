@@ -15,12 +15,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import lombok.extern.slf4j.Slf4j;
 import springbootapplication.girahuunhan.common.util.ResponseHelper;
 import springbootapplication.girahuunhan.role.Dto.GiraGroupDTO;
 import springbootapplication.girahuunhan.role.Dto.GiraGroupWithRolesDTO;
 import springbootapplication.girahuunhan.role.mapper.GiraGroupMapper;
 import springbootapplication.girahuunhan.role.service.GiraGroupService;
-
+@Slf4j
 @RestController
 @RequestMapping("/groups")
 public class GiraGroupController {
@@ -29,6 +30,7 @@ public class GiraGroupController {
 	
 	@GetMapping
 	public Object findAllGroups() {
+		log.info("Find All Groups");
 		List<GiraGroupDTO> groups = service.findAllGroup();
 		return ResponseHelper.getResponse(groups, HttpStatus.OK);
 	}
