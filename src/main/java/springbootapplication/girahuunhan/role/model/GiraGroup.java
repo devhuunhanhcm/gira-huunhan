@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 import springbootapplication.girahuunhan.common.model.BaseEntity;
-
+import springbootapplication.girahuunhan.user.model.GiraUser;
 @Setter
 @Getter
 @NoArgsConstructor
@@ -33,7 +33,12 @@ public class GiraGroup extends BaseEntity {
 			)
 	private Set<GiraRole> roles = new LinkedHashSet<GiraRole>();
 	
-	
+	@ManyToMany(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
+	@JoinTable(name = "gira_group_user",
+				joinColumns = @JoinColumn(name="group_id"),
+				inverseJoinColumns = @JoinColumn(name="user_id")
+			)
+	private Set<GiraUser> users = new LinkedHashSet<GiraUser>();
 	public void addRole(GiraRole role) {
 		roles.add(role);
 		role.getGroups().add(this);
