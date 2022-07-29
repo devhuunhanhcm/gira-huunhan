@@ -22,7 +22,7 @@ CREATE TABLE gira_role (
 	last_modified_at 	TIMESTAMP,
 	last_modified_by 	VARCHAR ( 36 ),
 	VERSION 			int4 NOT NULL,
-	code 				VARCHAR ( 5 ),
+	code 				VARCHAR ( 30 ),
 	description 		VARCHAR ( 255 ),
 	PRIMARY KEY ( ID ) 
 );
