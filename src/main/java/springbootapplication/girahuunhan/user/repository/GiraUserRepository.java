@@ -14,5 +14,7 @@ public interface GiraUserRepository extends JpaRepository<GiraUser, UUID> {
 	Optional<GiraUser> findByUsername(String username);
 
 	Optional<GiraUser> findByEmail(String email);
+	
+	Optional<GiraUser> findByEmailAndUsername(String email,String username);
 
 }

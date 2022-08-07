@@ -16,7 +16,7 @@ import springbootapplication.girahuunhan.user.dto.GiraUserDTO;
 import springbootapplication.girahuunhan.user.service.GiraUserService;
 
 @RestController
-@RequestMapping("users")
+@RequestMapping("api/v1/users")
 public class GiraUserController {
 	@Autowired
 	private GiraUserService service;

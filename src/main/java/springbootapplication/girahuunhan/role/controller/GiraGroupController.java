@@ -23,7 +23,7 @@ import springbootapplication.girahuunhan.role.mapper.GiraGroupMapper;
 import springbootapplication.girahuunhan.role.service.GiraGroupService;
 @Slf4j
 @RestController
-@RequestMapping("/groups")
+@RequestMapping("api/v1/groups")
 public class GiraGroupController {
 	@Autowired
 	private GiraGroupService service;
